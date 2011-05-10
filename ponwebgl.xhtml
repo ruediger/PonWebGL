@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>PonwebGL</title>
+    <style type="text/css">
+      #glcanvas {
+        border: 1px solid black;
+        padding: 10px;
+        width: 800px;
+        height: 600px;
+      }
+    </style>
+    <script src="sylvester.js" type="text/javascript" />
+    <script src="glUtils.js" type="text/javascript" />
+    <script src="ponwebgl.js" type="text/javascript" />
+
+    <script id="shader-fs" type="x-shader/x-fragment">
+      varying lowp vec4 vColor;
+	
+      void main(void) {
+        gl_FragColor = vColor;
+      }
+    </script>
+    
+    <script id="shader-vs" type="x-shader/x-vertex">
+      attribute vec3 aVertexPosition;
+      attribute vec4 aVertexColor;
+    
+      uniform mat4 uMVMatrix;
+      uniform mat4 uPMatrix;
+      
+      varying lowp vec4 vColor;
+    
+      void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+        vColor = aVertexColor;
+      }
+    </script>
+  </head>
+  <body onload="start()">
+    <h1>Pon<sub>web</sub>GL</h1>
+    <div id="scorebox" style="float:right; font-size:180%; margin-right:5em; position:absolute; top:90px; left:700px; color:white;"></div>
+    <div id="msgbox"></div>
+    <canvas id="glcanvas" width="800" height="600">
+      Get an HTML5 Browser.
+    </canvas>
+    Pon<sub>web</sub>GL uses <a href="http://sylvester.jcoglan.com/">Sylvester</a> and code from <a href="https://developer.mozilla.org/en/WebGL">Mozilla's WebGL Tutorial</a>.
+  </body>
+</html>
