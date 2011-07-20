@@ -1,4 +1,4 @@
-#+TITLE: Pon_{web}GL README
+#+TITLE: PonWebGL README
 #+AUTHOR: Rüdiger Sonderfeld
 #+EMAIL: ruediger@c-plusplus.de
 
