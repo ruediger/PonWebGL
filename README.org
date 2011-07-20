@@ -1,0 +1,13 @@
+* Pon_{web}GL
+A very simple and small Pong-style game based on WebGL. I tested it with Firefox 4 and 5 and with Chrome 14dev.
+
+* Controls
+
+| Action | Left player | Right player |
+|--------+-------------+--------------|
+| Up     | =W=         | Up key       |
+| Down   | =S=         | Down key     |
+
+* Bugs
+- createCircle doesn't create a full circle
+- collision detection to simple
